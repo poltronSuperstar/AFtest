@@ -13,7 +13,7 @@ class ProductRecommendationController extends AbstractController
 {
    // private ProductRecommendationService $productRecommendationService;
 
-    public function __construct()
+    public function __construct()//FIXME injection de dep
     {
        // $this->productRecommendationService = $productRecommendationService;
     }
@@ -28,14 +28,15 @@ class ProductRecommendationController extends AbstractController
         if (!$city) {
             return $this->json(['error' => 'City not provided'], Response::HTTP_BAD_REQUEST);
         }
-
+        //mock
+        $product = [
+            'id'=>'1',
+            'name'=> "pull beige fluo",
+            'price'=>22.3
+        ];
 
         return $this->json([
-            'products' => [[
-                    'id' => $product->getId(),
-                    'name' => $product->getName(),
-                    'price' => $product->getPrice()
-                ]],
+            'products' => [$product],
             
             'weather' => [
                 'city' => $city,

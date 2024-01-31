@@ -4,7 +4,7 @@
  *       Je ne pense pas avoir le temps de faire plus propre, mais 
  */
 
-namespace App\Domain\Model;
+namespace WeatherProductRecommender\Domain\Model;
 
 use Doctrine\ORM\Mapping as ORM;
 

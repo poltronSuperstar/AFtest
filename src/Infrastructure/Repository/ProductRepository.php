@@ -2,21 +2,18 @@
 
 namespace WeatherProductRecommender\Infrastructure\Repository;
 
-use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
-use Doctrine\Persistence\ManagerRegistry;
+
+
 use WeatherProductRecommender\Domain\Model\Product;
 
-class ProductRepository extends ServiceEntityRepository
+class ProductRepository implements ProductRepositoryPort
 {
-    public function __construct(ManagerRegistry $registry)
-    {
-        parent::__construct($registry, Product::class);
-    }
+
 
     public function add(Product $product): void
     {
-        $this->_em->persist($product);
-        $this->_em->flush();
+        //persist($product);
+        //flush();
     }
 
     /**
