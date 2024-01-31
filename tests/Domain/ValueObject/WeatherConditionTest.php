@@ -2,7 +2,7 @@
 
 namespace WeatherProductRecommender\Tests\Domain\ValueObject;
 
-use WeatherProductRecommender\Domain\ValueObject\WeatherCondition;
+use WeatherProductRecommender\Domain\ValueObject;
 use PHPUnit\Framework\TestCase;
 
 class WeatherConditionTest extends TestCase
@@ -10,11 +10,17 @@ class WeatherConditionTest extends TestCase
     public function testWeatherConditionAttributes()
     {
         $city = 'Paris';
-        $temperature = 15.5;
+        $temperature = 5.5;
+        $weatherType = 'hot';
 
-        $weatherCondition = new WeatherCondition($city, $temperature);
+        // WeatherCondition being a value Object, mapping temperatur => cold|mild|hot correctly is not its responsibility
+        // Therefore it should comply with that
 
-        $this->assertEquals($city, $weatherCondition->getCity());
-        $this->assertEquals($temperature, $weatherCondition->getTemperature());
+        $weatherCondition = new WeatherCondition($city, $temperature, $weatherType); 
+
+        $this->assertEquals($city, $weatherCondition->city);
+        $this->assertEquals($temperature, $weatherCondition->temperature);
+        $this->assertEquals($temperature, $weatherCondition->weatherType, $weatherType);
+
     }
 }

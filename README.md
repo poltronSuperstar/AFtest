@@ -1,10 +1,15 @@
 # WeatherProductRecommender (AF test)
+## Avant propos
+### Ce que j'aurais fait avec plus de temps
+* Docstrings à foison
+* Plus de granularité, des cas limites dans les TUs
+
 ## Conventions
 ### Commentaires
 Je commente tout en anglais, même dans mes projets persos.
 Deux exceptions:
 * des `TODO` ou `FIXME` de court terme que je m'adresse à moi même (quand c'est en français, je sais que c'est prioritaire)
-* Quand je m'adresse sans ambiguité (et de manière future-proof) à des francophones, par exemple dans le cadre d'un test technique.
+* Quand je m'adresse sans ambiguité (et de manière future-proof) à des francophones, par exemple dans le cadre d'un test technique. (J'annoterai le code de `//Note: ...` pour preciser les raccourcis que je n'aurais pas pris si j'avais eu plus de temps)
 
 _Du coup ne vous offuquez pas si certains commentaires sont en français, je ne ferais pas ça en prod_
 

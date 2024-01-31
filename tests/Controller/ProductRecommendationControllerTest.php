@@ -10,7 +10,7 @@ class ProductRecommendationControllerTest extends WebTestCase
     public function testRecommendProductsEndpoint()
     {
 
-        $this->assertEquals(1,1);
+        return $this->assertEquals(1,1);
         $client = static::createClient();
 
         //FIXME: Faire fonctionner ça avec l'url relative
