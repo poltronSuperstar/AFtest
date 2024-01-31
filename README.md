@@ -94,3 +94,6 @@ touch tests/Infrastructure/Repository/ProductRepositoryTest.php
 touch tests/Infrastructure/Weather/WeatherApiClientTest.php
 touch tests/Controller/ProductRecommendationControllerTest.php
 ```
+
+#### Creation d'un namespace racine
+#### Ecriture du premier test
