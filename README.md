@@ -125,7 +125,12 @@ touch src/Controller/ProductRecommendationController.php
 #### Ecriture du premier test
 
 * test de `ProductRecommendationController`
+## NOTE: je mettrai pas le code ici à chaque fois, je le fais pour un test par souci de clarté, le principe reste le même:
+### _**1**_ Ecriture du test
+### _**2**_ Ecriture du code minimal pour passer le test
+### _**3**_ Ecriture de plus de tests et refacto
 
+**tests/Controller/ProductRecommendationControllerTest.php**
 ```php
 <?php
 
@@ -168,6 +173,8 @@ class ProductRecommendationControllerTest extends WebTestCase
 }
 ```
 * Mock code pour passer le test en dur 
+
+
 
 #### Test ValueObjects et Models
 ##### Ecriture du test pour `WeatherCondition`
