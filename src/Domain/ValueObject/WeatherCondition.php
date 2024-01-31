@@ -11,7 +11,7 @@ class WeatherCondition
     public function __construct(
         string $city,
         float $temperature,
-        string $weatherType)
+        string $weatherType = null)
     {
         $this->city = $city;
         $this->temperature = $temperature;

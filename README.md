@@ -178,3 +178,9 @@ class ProductRecommendationControllerTest extends WebTestCase
 
 #### Test ValueObjects et Models
 ##### Ecriture du test pour `WeatherCondition`
+
+
+## Note de fin
+J'ai passé bien trop de temps à essayer de faire marcher mon code, retrospectivement, j'aurais du écrire d'avantage de code en ayant à l'esprit qu'il n'a pas vocation à tourner, mais plutôt donner une idée de comment j'écris et organise mon code.
+
+J'espère toutefois que ce que j'ai pu faire en 3h donne une bonne idée de mon approche du code.
