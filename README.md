@@ -97,4 +97,72 @@ touch src/Controller/ProductRecommendationController.php
 ```
 
 #### Creation d'un namespace racine
+`composer.json`
+```json
+{    "autoload": {
+        "psr-4": {
+            "WeatherProductRecommender\\": "src/",
+            "App\\":"src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "WeatherProductRecommender\\Tests\\": "tests/",
+            "App\\Tests\\": "tests/"
+
+
+        }
+    }
+}```
+
+### TDD all the things
+
 #### Ecriture du premier test
+
+* test de `ProductRecommendationController`
+
+```php
+<?php
+
+namespace WeatherProductRecommender\Tests\Controller;
+
+use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
+use Symfony\Component\HttpFoundation\Response;
+
+class ProductRecommendationControllerTest extends WebTestCase
+{
+    public function testRecommendProductsEndpoint()
+    {
+
+        $this->assertEquals(1,1);
+        $client = static::createClient();
+
+        //FIXME: Faire fonctionner ça avec l'url relative
+        $client->request(
+            'GET',
+            '/recommendations?city=Paris',
+        );
+
+   
+        $this->assertResponseStatusCodeSame(Response::HTTP_OK);
+
+        $responseContent = $client->getResponse()->getContent();
+        $responseData = json_decode($responseContent, true);
+
+        $this->assertArrayHasKey('products', $responseData);
+        $this->assertArrayHasKey('weather', $responseData);
+        $this->assertIsArray($responseData['products']);
+        foreach ($responseData['products'] as $product) {
+            $this->assertArrayHasKey('id', $product);
+            $this->assertArrayHasKey('name', $product);
+            $this->assertArrayHasKey('price', $product);
+        }
+        $this->assertEquals('Paris', $responseData['weather']['city']);
+        $this->assertContains($responseData['weather']['is'], ['hot', 'mild', 'cold']);
+    }
+}
+```
+* Mock code pour passer le test en dur 
+
+#### Test ValueObjects et Models
+##### Ecriture du test pour `WeatherCondition`
