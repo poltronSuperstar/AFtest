@@ -93,6 +93,7 @@ touch tests/Domain/ValueObject/WeatherConditionTest.php
 touch tests/Infrastructure/Repository/ProductRepositoryTest.php
 touch tests/Infrastructure/Weather/WeatherApiClientTest.php
 touch tests/Controller/ProductRecommendationControllerTest.php
+touch src/Controller/ProductRecommendationController.php
 ```
 
 #### Creation d'un namespace racine
